@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Now</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/static/basketball_service_page.png">
+    <style>
+        .bg-image{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            /* -webkit-filter: blur(5px); Safari 6.0 - 9.0 */
+            filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img class="bg-image" src="/static/register_bg_image.jpeg" alt="">
+    <div class="bg-grey-lighter min-h-screen flex flex-col">
+        <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+            <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full" style="background-color: #ECECEC;">
+                <h1 class="mb-8 text-3xl text-center">Register Now</h1>
+                <form action="/register" method="post">
+                <input 
+                    type="text"
+                    class="block border border-grey-light w-full p-3 rounded mb-4"
+                    name="name_reg"
+                    placeholder="Full Name" />
+
+                <input 
+                    type="text"
+                    class="block border border-grey-light w-full p-3 rounded mb-4"
+                    name="email_reg"
+                    placeholder="Email" />
+
+                <input 
+                    type="number"
+                    class="block border border-grey-light w-full p-3 rounded mb-4"
+                    name="number_reg"
+                    placeholder="Phone" />
+
+                <input 
+                    type="text"
+                    class="block border border-grey-light w-full p-3 rounded mb-4"
+                    name="address_reg"
+                    placeholder="Address" />
+
+                <button
+                    type="submit"
+                    class="w-full text-center py-3 rounded bg-green text-black hover:bg-green-dark focus:outline-none my-1"
+                    style="color: white; background-color: #3DA1FF;" 
+                >Register</button>
+            </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

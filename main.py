@@ -40,7 +40,7 @@ def home():
 
 @app.route("/services")
 def services():
-    return render_template("services.html")
+    return render_template("services_updated.html")
 
 @app.route("/about")
 def about():
@@ -57,9 +57,18 @@ def contact():
     return render_template("contact.html")
 
 
-@app.route("/test1")
-def test1():
-    return render_template("test1.html")
+@app.route("/register", methods=["POST", "GET"])
+def register():
+    if request.method=="POST":
+        name = request.form.get("name_reg")
+        email = request.form.get("email_reg")
+        phone = request.form.get("number_reg")
+        address = request.form.get("address_reg")
+
+        with open("contact_data/register.txt", "a+") as f:
+            f.write("{}, {}, {}, {}\n".format(name, email, phone, address))
+        
+    return render_template("register.html")
 
 if __name__=="__main__":
-    app.run(debug=False, host="0.0.0.0")
+    app.run(debug=True)
